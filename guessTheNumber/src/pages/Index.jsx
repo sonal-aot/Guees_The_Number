@@ -8,7 +8,7 @@ function Index() {
     const hostAddress = "http://localhost:4000"
 
     const [userNumber, setUserNumber] = useState()
-    const [answer, setAnswer] = useState(null)
+    const [answer, setAnswer] = useState("")
 
     const handleUserNumber = (e) => {
         setUserNumber(e.target.value);
@@ -19,6 +19,7 @@ function Index() {
         try {
             const response = await axios.get(`${hostAddress}/correctNum`)
             setAnswer(response.data)
+            // console.log(response)
         }
         catch {
             console.error("Error..!!")
